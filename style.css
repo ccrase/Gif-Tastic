@@ -1,0 +1,18 @@
+h1{
+    font-family: 'Bungee Shade', cursive;
+    font-size: 84px;
+    text-align: center;
+    padding: 5px;
+}
+#submit{
+    float: left;
+}
+
+.btn{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+img{
+    margin: 10px;
+}
