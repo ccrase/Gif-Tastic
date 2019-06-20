@@ -10,7 +10,7 @@
                 $(".nav-item").empty();
                 for (var j = 0; j < topics.length; j++) {
                     var newBtn = $("<button>");
-                    newBtn.attr("class", "btn btn-secondary giphybutton");
+                    newBtn.attr("class", "btn btn-dark giphybutton");
                     newBtn.attr("data-tag", topics[j].replace(" ", "+"));
                     newBtn.text(topics[j]);
                     $(".nav-item").append(newBtn);
@@ -45,12 +45,31 @@
                     //for-loop to cycle through all the returned responses
                     for (var i = 0; i < results.length; i++) {
                         var imgURL = results[i].images.fixed_height_still.url;
-                        var gifImg = $("<img>");
-                        gifImg.attr("src", imgURL);
-                        gifImg.attr("class", "gif");
-                        gifImg.attr("format", "still");
-                        gifImg.attr("move-alt", results[i].images.fixed_height.url);
-                        gifImg.attr("still-alt", results[i].images.fixed_height_still.url);
+                        var link = results[i].url;
+                        var rating = results[i].rating.toUpperCase();
+                        var movingAlt = results[i].images.fixed_height.url;
+                        var stillAlt = results[i].images.fixed_height_still.url;
+                        
+                        // var gifImg = `<div class="card" style="width: 25rem">
+                        //                 <img src= ${imgURL} class="card-img-top gif" move-alt = ${movingAlt} still-alt = ${stillAlt} format = "still" width="auto">
+                        //                 <div class="card-body">
+                        //                     <h5 class="card-title">Rated: ${rating}</h5>
+                        //                     <a href=${link} class="btn btn-link">Link to Giphy!</a>
+                        //                 </div>
+                        //             </div>`;
+                        var gifImg = `<figure class="figure">
+                                        <img src=${imgURL} class="figure-img img-fluid rounded gif" move-alt = ${movingAlt} still-alt = ${stillAlt} format = "still" width="auto">
+                                        <figcaption class="figure-caption">This GIF is rated <b> ${rating}</b><a href=${link} class="btn btn-outline-warning btn-sm">GIPHY link</a></figcaption>
+                                    </figure>`;           
+                    
+                        //images details 
+                        //var gifImg = $("<img>");
+                        //gifImg.attr("src", imgURL);
+                        //gifImg.attr("class", "gif");
+                        //gifImg.attr("format", "still");
+                        //gifImg.attr("move-alt", results[i].images.fixed_height.url);
+                        //gifImg.attr("still-alt", results[i].images.fixed_height_still.url);
+
                         $("#gifs-div").prepend(gifImg);
                     };
 
@@ -77,7 +96,6 @@
                     };
                     
                  });
-                 //function to make the gif stop after its been clicked a second time 
 
                 });
 

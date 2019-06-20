@@ -12,9 +12,16 @@ h1{
     margin-right: 10px;
     margin-bottom: 10px;
 }
-
-img{
-    margin: 10px;
+.figure-caption{
+    background-color: white;
+    text-align: center;
+    color: black;
+}
+.btn-sm{
+    margin-left: 40px;
+}
+.figure{
+    margin: 5px;
 }
 .gif{
         /* IE */
