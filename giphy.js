@@ -1,7 +1,7 @@
      $(document).ready(function () {
             var query;
             var userinput;
-            var topics = ["the office", "family guy", "tom and jerry", "broad city", "bobs burgers", "hey arnold", "workaholics", "the simpsons", "parks and recreation"];
+            var topics = ["the office", "family guy", "tom and jerry", "broad city", "bobs burgers", "friends", "hey arnold", "workaholics", "the simpsons", "parks and recreation"];
             makeButton();
 
 
@@ -55,18 +55,25 @@
                     };
 
                     //trying to over over images
-                    $(".gif").hover(function(){
-                        console.log("hover");
-                    })
+                    // $(".gif").hover(function(){
+                    //     if($(this).css('filter') === 'grayscale(1)'){
+                    //         $(this).css({'filter': 'none'}, {'-webkit-filter': 'none'});
+                    //       }else{
+                    //          $(this).css({'filter': 'grayscale(1)'}, {'-webkit-filter': 'grayscale(1)'});
+
+                    //          }
+                    //  });
 
                     $(".gif").on("click", function(){
                         var state = $(this).attr("format");
                     if(state === "still"){
                         $(this).attr("src", $(this).attr("move-alt"));
                         $(this).attr("format", "animate");
+                        $(this).css({'filter': 'none'}, {'-webkit-filter': 'none'});
                     }else{
                         $(this).attr("src", $(this).attr("still-alt"));
                         $(this).attr("format", "still");
+                        $(this).css({'filter': 'grayscale(1)'}, {'-webkit-filter': 'grayscale(1)'});
                     };
                     
                  });

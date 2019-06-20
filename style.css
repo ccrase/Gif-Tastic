@@ -16,3 +16,23 @@ h1{
 img{
     margin: 10px;
 }
+.gif{
+        /* IE */
+        filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+      
+        /* Chrome, Safari */
+        -webkit-filter: grayscale(1);
+      
+        /* Firefox */
+        filter: grayscale(1);
+}
+.gif:hover{
+    /* IE */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  
+    /* Chrome, Safari */
+    -webkit-filter: grayscale(1);
+  
+    /* Firefox */
+    filter: grayscale(1);
+}
